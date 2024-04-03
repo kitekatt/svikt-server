@@ -1,0 +1,72 @@
+### Список всех товаров
+GET /api/card/getall HTTP/1.1
+Host: localhost:5000
+
+### Получить один товар
+GET /api/card/getone/7 HTTP/1.1
+Host: localhost:5000
+
+### Создать новый товар
+POST /api/card/create HTTP/1.1
+Host: localhost:5000 
+Authorization: Bearer eyJhb...XVCJ9.eyJpZ...2NDR9.eDlzf...87TTA
+Content-Type: multipart/form-data; boundary=MultiPartFormDataBoundary
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="name"
+Content-Type: text/plain; charset=utf-8
+
+Товар № 4
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="price"
+Content-Type: text/plain; charset=utf-8
+
+88888
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="props"
+Content-type: text/plain; charset=utf-8
+
+описание товара
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="props"
+Content-type: text/plain; charset=utf-8
+
+[{"name": "Свойство 3", "description": "описание 3"},{"name": "Свойство 4", "description": "описание 4"}]
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< ./image.jpg
+--MultiPartFormDataBoundary--
+
+### Обновить товар
+PUT /api/card/update/1 HTTP/1.1
+Host: localhost:5000
+Authorization: Bearer eyJhb...XVCJ9.eyJpZ...2NDR9.eDlzf...87TTA
+Content-Type: multipart/form-data; boundary=MultiPartFormDataBoundary
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="name"
+Content-Type: text/plain; charset=utf-8
+
+Товар № 4 (new)
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="price"
+Content-Type: text/plain; charset=utf-8
+
+99999
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="props"
+Content-type: text/plain; charset=utf-8
+
+[{"name": "Свойство 3 (new)", "description": "описание 3 new"},{"name": "Свойство 4 (new)", "description": "описание 4 new"}]
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< ./image-new.jpg
+--MultiPartFormDataBoundary--
+
+### Удалить товар
+DELETE /api/card/delete/2 HTTP/1.1
+Host: localhost:5000

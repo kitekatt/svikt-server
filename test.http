@@ -1,0 +1,91 @@
+### Список всех товаров
+GET /api/card/getall HTTP/1.1
+Host: localhost:5000
+
+### Получение одного товара
+GET /api/card/getone/12345 HTTP/1.1
+Host: localhost:5000
+
+### Создание нового товара
+POST /api/card/create HHTP/1.1
+Host: localhost:5000
+Content-Type: application/json; charset=utf-8
+
+### создание товара с изображением
+POST /api/card/create HTTP/1.1
+Host: localhost:5000
+Content-Type: multipart/form-data; boundary=MultiPartFormDataBoundary
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="name"
+
+Название товара22
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="price"
+
+11111
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="description"
+
+описание товара
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< ./image.jpg
+--MultiPartFormDataBoundary--
+
+### Обновление товара
+PUT /api/card/update/1 HTTP/1.1
+Host: localhost:5000
+Content-Type: application/json; charset=utf-8
+
+### Удаление товара
+DELETE /api/card/delete/1 HTTP/1.1
+Host: localhost:5000
+
+### создание товара, у которого есть свойства
+POST /api/card/create HTTP/1.1
+Host: localhost:5000
+Content-Type: multipart/form-data; boundary=MultiPartFormDataBoundary
+
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="name"
+Content-Type: text/plain; charset=utf-8
+
+Название товара 223
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="price"
+Content-Type: text/plain; charset=utf-8
+
+12345
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="description"
+Content-Type: text/plain; charset=utf-8
+
+описание товара
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="props"
+Content-type: text/plain; charset=utf-8
+
+[{"name": "Свойство 1", "desc": "описание 1"},{"name": "Свойство 2", "desc": "Значение 2"}]
+--MultiPartFormDataBoundary
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< ./image.jpg
+--MultiPartFormDataBoundary--
+
+GET / HTTP/1.1
+Host: localhost:7000
+
+###
+
+POST /api/user/signup
+Host: localhost:5000
+Content-type: application/json; charset=utf-8
+
+{
+    "email": "user@mail.ru",
+    "password": "12345"
+}

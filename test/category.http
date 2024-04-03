@@ -1,0 +1,32 @@
+### Список всех категорий
+GET /api/categories/getall HTTP/1.1
+Host: localhost:5000
+
+### Получить одну категорию
+GET /api/categories/getone/1 HTTP/1.1
+Host: localhost:5000
+
+### Создать новую категорию
+POST /api/categories/create HTTP/1.1
+Host: localhost:5000
+Authorization: Bearer eyJhb...XVCJ9.eyJpZ...2NDR9.eDlzf...87TTA
+Content-type: application/json; charset=utf-8
+
+{
+    "name": "карточка"
+}
+
+### Обновить категорию
+PUT /api/categories/update/1 HTTP/1.1
+Host: localhost:5000
+Authorization: Bearer eyJhb...XVCJ9.eyJpZ...2NDR9.eDlzf...87TTA
+Content-type: application/json; charset=utf-8
+
+{
+    "name": "Первая категория (new)"
+}
+
+### Удалить категорию
+DELETE /api/categories/delete/1 HTTP/1.1
+Host: localhost:5000
+Authorization: Bearer eyJhb...XVCJ9.eyJpZ...2NDR9.eDlzf...87TTA
