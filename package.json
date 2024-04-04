@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start-dev": "nodemon index.js",
-    "build": "browserify src/index.js -o dist/bundle.js"
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",
